@@ -26,10 +26,6 @@ public class SplashScreenController implements Initializable {
 
     SimpleBooleanProperty isFinished = new SimpleBooleanProperty();
 
-    public boolean isIsFinished() {
-        return isFinished.get();
-    }
-
     public SimpleBooleanProperty isFinishedProperty() {
         return isFinished;
     }
@@ -37,7 +33,6 @@ public class SplashScreenController implements Initializable {
 
     @FXML
     private ImageView splashScreen;
-
     @FXML
     private Text splashText;
 
@@ -67,6 +62,17 @@ public class SplashScreenController implements Initializable {
                         new KeyValue(gaussianBlur.radiusProperty(), 50))
         );
 
+        //text animation
+        AnimationFX splashTextAnimation = new RotateInDownLeft(splashText).setSpeed(0.75);
+        splashTextAnimation.setOnFinished(event -> {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            isFinished.setValue(true);
+        });
+
         //set what should be done after fadein
         fadeIn.setOnFinished(event -> {
             splashScreen.setEffect(gaussianBlur);
@@ -77,7 +83,7 @@ public class SplashScreenController implements Initializable {
         blurAnimation.setOnFinished(event -> {
             ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
             scheduler.schedule(() -> splashText.setVisible(true), 80, TimeUnit.MILLISECONDS);
-            new RotateInDownLeft(splashText).setSpeed(0.75).play();
+            splashTextAnimation.play();
         });
 
         //lets start

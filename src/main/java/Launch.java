@@ -1,6 +1,9 @@
 import Controller.SplashScreenController;
 import Module.DragHandler;
+import animatefx.animation.FadeIn;
+import animatefx.animation.FadeOut;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +12,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author SamadiPour
@@ -17,20 +23,24 @@ public class Launch extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        Platform.setImplicitExit(false);
 
         //display splash screen for 2 second with fade and blur effect
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent splahRoot = fxmlLoader.load(getClass().getResource("layout/SplashScreen.fxml").openStream());
+        Parent splashRoot = fxmlLoader.load(getClass().getResource("layout/SplashScreen.fxml").openStream());
         SplashScreenController splashScreen = fxmlLoader.getController();
-        Scene splashScene = new Scene(splahRoot);
+
+        Stage splashStage = new Stage();
+        Scene splashScene = new Scene(splashRoot);
         splashScene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setScene(splashScene);
+        splashStage.initStyle(StageStyle.TRANSPARENT);
+        splashStage.setScene(splashScene);
 
         //check if splash screen is done
         //then we show main program
         splashScreen.isFinishedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue){
+                //make it draggable
                 DragHandler.setStage(stage);
                 Parent root = null;
                 try {
@@ -43,10 +53,21 @@ public class Launch extends Application {
                 stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
                 stage.show();
+
+                //some animation
+                new FadeOut(splashRoot).setSpeed(0.5).play();
+                new FadeIn(root).setSpeed(2).play();
+                root.setVisible(false);
+
+                ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+                Parent finalRoot = root;
+                scheduler.schedule(() -> finalRoot.setVisible(true), 50, TimeUnit.MILLISECONDS);
+
             }
         });
 
-        stage.show();
+        //start app
+        splashStage.show();
     }
 
     public static void main(String[] args) {
