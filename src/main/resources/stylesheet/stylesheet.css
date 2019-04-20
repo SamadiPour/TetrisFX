@@ -2,9 +2,20 @@
     font-family: 'Kalos Sans';
     src: url("/fonts/Kalos.ttf");
 }
+
 @font-face {
-    font-family: 'FiraCode';
-    src: url("/fonts/FiraCode.ttf");
+    font-family: 'Open Sans Bold';
+    src: url("/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Anurati';
+    src: url("/fonts/Anurati-Regular.otf");
 }
 
 .text-area {
@@ -71,11 +82,15 @@
     -fx-text-fill: #FFFFFF;
 }
 
-.backImage {
-    -fx-background-image: url("../images/back.png");
-    /*-fx-background-color:transparent;*/
-}
-.text-area:focused{
+.text-area:focused {
     -fx-faint-focus-color: transparent;
     -fx-focus-color: rgba(247, 140, 123, 0.9); /* here rgba (corrected) */
+}
+
+/*---------------------------Splash Screen-----------------------------*/
+.splash-text {
+    -fx-font-family: "Anurati";
+    -fx-font-size: 90;
+    -fx-fill: #00838F;
+    -fx-text-alignment: center;
 }

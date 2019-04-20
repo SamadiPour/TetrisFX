@@ -21,8 +21,6 @@ public class MainController implements Initializable {
         Executors
                 .newSingleThreadExecutor()
                 .submit(() -> DragHandler.makeStageDragable(mainPane));
-
-
     }
 
 
