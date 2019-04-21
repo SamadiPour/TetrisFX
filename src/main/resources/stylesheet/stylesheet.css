@@ -66,16 +66,12 @@
     -fx-background-color: transparent;
 }
 
-.pink-btn {
-    -fx-background-color: #F78C7B;
+.green-button {
+    -fx-background-color: #00838F;
     -fx-background-radius: 5px;
     -fx-text-fill: #FFFFFF;
 }
 
-.text-area:focused {
-    -fx-faint-focus-color: transparent;
-    -fx-focus-color: rgba(247, 140, 123, 0.9); /* here rgba (corrected) */
-}
 /*---------------------------General-----------------------------*/
 .glyph-icon{
     -fx-text-fill: -icons-color;
@@ -99,7 +95,7 @@
     -icon-size: 20px;
 }
 
-.minimize-button {
+.other-top-button {
     -fx-border-radius: 0;
     -fx-background-radius: 0;
     -icons-color: #999999;
@@ -113,7 +109,7 @@
     -icons-color: white;
 }
 
-.minimize-button:hover {
+.other-top-button:hover {
     -fx-border-radius: 0;
     -fx-background-radius: 0;
     -fx-background-color: #bdc3c7;

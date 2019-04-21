@@ -3,39 +3,49 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" fx:id="rootAnchorPane" prefHeight="825.0" prefWidth="1100.0" styleClass="main-background" stylesheets="@../stylesheet/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainScreenController">
     <children>
-        <VBox prefHeight="825.0" prefWidth="1100.0">
-            <children>
-                <AnchorPane fx:id="topBarNav" prefHeight="30.0" prefWidth="1100.0" styleClass="top-bar-nav">
-                    <children>
-                        <JFXButton fx:id="exitBtn" focusTraversable="false" layoutX="1050.0" prefHeight="30.0" prefWidth="50.0" styleClass="exit-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <graphic>
-                                <MaterialDesignIconView glyphName="WINDOW_CLOSE" />
-                            </graphic>
+      <StackPane fx:id="rootStackPane">
+         <children>
+              <VBox prefHeight="825.0" prefWidth="1100.0">
+                  <children>
+                      <AnchorPane fx:id="topBarNav" prefHeight="30.0" prefWidth="1100.0" styleClass="top-bar-nav">
+                          <children>
+                              <JFXButton fx:id="exitBtn" focusTraversable="false" layoutX="1050.0" prefHeight="30.0" prefWidth="50.0" styleClass="exit-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <graphic>
+                                      <MaterialDesignIconView glyphName="WINDOW_CLOSE" />
+                                  </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="minimizeBtn" focusTraversable="false" layoutX="1000.0" prefHeight="30.0" prefWidth="50.0" styleClass="other-top-button" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0">
+                                  <graphic>
+                                      <MaterialDesignIconView glyphName="MINUS" />
+                                  </graphic>
+                              </JFXButton>
+                        <JFXButton fx:id="helpBtn" focusTraversable="false" layoutX="950.0" onMouseReleased="#helpButtonClicked" prefHeight="30.0" prefWidth="50.0" styleClass="other-top-button">
+                           <graphic>
+                              <MaterialDesignIconView fx:id="helpButtonIcon" glyphName="INFORMATION_OUTLINE" />
+                           </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="minimizeBtn" focusTraversable="false" layoutX="1000.0" prefHeight="30.0" prefWidth="50.0" styleClass="minimize-button" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0">
-                            <graphic>
-                                <MaterialDesignIconView glyphName="MINUS" />
-                            </graphic>
-                        </JFXButton>
-                    </children>
-                </AnchorPane>
-                <AnchorPane prefHeight="755.0" prefWidth="1100.0" />
-                <AnchorPane prefHeight="40.0" prefWidth="1100.0" styleClass="bottom-bar-nav">
-                    <children>
-                        <JFXButton fx:id="optionBtn" contentDisplay="RIGHT" focusTraversable="false" layoutX="1050.0" prefHeight="40.0" prefWidth="140.0" styleClass="option-button" text="OPTIONS" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                            <graphic>
-                                <MaterialDesignIconView fx:id="optionBtnIcon" glyphName="SETTINGS" />
-                            </graphic>
-                        </JFXButton>
-                        <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-logo" text="TETRISFX" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" />
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
+                          </children>
+                      </AnchorPane>
+                      <AnchorPane prefHeight="755.0" prefWidth="1100.0" />
+                      <AnchorPane prefHeight="40.0" prefWidth="1100.0" styleClass="bottom-bar-nav">
+                          <children>
+                              <JFXButton fx:id="optionBtn" contentDisplay="RIGHT" focusTraversable="false" layoutX="1050.0" prefHeight="40.0" prefWidth="140.0" styleClass="option-button" text="OPTIONS" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                  <graphic>
+                                      <MaterialDesignIconView fx:id="optionBtnIcon" glyphName="SETTINGS" />
+                                  </graphic>
+                              </JFXButton>
+                              <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-logo" text="TETRISFX" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" />
+                          </children>
+                      </AnchorPane>
+                  </children>
+              </VBox>
+         </children>
+      </StackPane>
     </children>
 </AnchorPane>
