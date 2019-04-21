@@ -1,5 +1,6 @@
 import Controller.SplashScreenController;
 import Module.DragHandler;
+import animatefx.animation.AnimationFX;
 import animatefx.animation.FadeIn;
 import animatefx.animation.FadeOut;
 import javafx.application.Application;
@@ -39,6 +40,8 @@ public class Launch extends Application {
         splashScene.setFill(Color.TRANSPARENT);
         splashStage.initStyle(StageStyle.TRANSPARENT);
         splashStage.setScene(splashScene);
+        splashStage.getIcons().add(new Image(Launch.class.getResourceAsStream("images/icon.png")));
+        splashStage.setTitle("TetrisFX");
 
 
         //check if splash screen is done
@@ -61,13 +64,14 @@ public class Launch extends Application {
 
                 //some animation
                 new FadeOut(splashRoot).setSpeed(0.5).play();
-                new FadeIn(root).setSpeed(1.6).play();
+                AnimationFX stageAnimation =  new FadeIn(root).setSpeed(1.6);
+                stageAnimation.setOnFinished(event -> splashStage.close());
+                stageAnimation.play();
                 root.setVisible(false);
 
                 ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
                 Parent finalRoot = root;
                 scheduler.schedule(() -> finalRoot.setVisible(true), 50, TimeUnit.MILLISECONDS);
-
             }
         });
 
