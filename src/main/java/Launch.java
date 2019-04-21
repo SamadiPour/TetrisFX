@@ -36,6 +36,7 @@ public class Launch extends Application {
         splashStage.initStyle(StageStyle.TRANSPARENT);
         splashStage.setScene(splashScene);
 
+
         //check if splash screen is done
         //then we show main program
         splashScreen.isFinishedProperty().addListener((observable, oldValue, newValue) -> {
@@ -44,7 +45,7 @@ public class Launch extends Application {
                 DragHandler.setStage(stage);
                 Parent root = null;
                 try {
-                    root = FXMLLoader.load(getClass().getResource("/layout/Main.fxml"));
+                    root = FXMLLoader.load(getClass().getResource("/layout/MainScreen.fxml"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -56,7 +57,7 @@ public class Launch extends Application {
 
                 //some animation
                 new FadeOut(splashRoot).setSpeed(0.5).play();
-                new FadeIn(root).setSpeed(2).play();
+                new FadeIn(root).setSpeed(1.6).play();
                 root.setVisible(false);
 
                 ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
@@ -67,7 +68,8 @@ public class Launch extends Application {
         });
 
         //start app
-        splashStage.show();
+//        splashStage.show();
+        splashScreen.isFinishedProperty().set(true);
     }
 
     public static void main(String[] args) {

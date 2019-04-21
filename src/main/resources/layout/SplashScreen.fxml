@@ -5,13 +5,16 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<StackPane prefHeight="825.0" prefWidth="1100.0" stylesheets="/stylesheet/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SplashScreenController">
-   <children>
-      <ImageView fx:id="splashScreen" fitHeight="825.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="/images/splash_screen.jpg" />
-         </image>
-      </ImageView>
-      <Text fx:id="splashText" textAlignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="splash-text" text="TETRISFX" />
-   </children>
+<StackPane prefHeight="825.0" prefWidth="1100.0" stylesheets="/stylesheet/stylesheet.css"
+           xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Controller.SplashScreenController">
+    <children>
+        <ImageView fx:id="splashScreen" fitHeight="825.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="/images/splash_screen.jpg"/>
+            </image>
+        </ImageView>
+        <Text fx:id="splashText" textAlignment="CENTER" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="splash-text"
+              text="TETRISFX"/>
+    </children>
 </StackPane>

@@ -15,5 +15,8 @@ dependencies {
 //    testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.8'
     compile group: 'io.github.typhon0', name: 'AnimateFX', version: '1.2.1'
+    compile group: 'de.jensd', name: 'fontawesomefx', version: '8.9'
+    compile group: 'de.jensd', name: 'fontawesomefx-materialdesignfont', version: '2.0.26-9.1.2'
+
 
 }

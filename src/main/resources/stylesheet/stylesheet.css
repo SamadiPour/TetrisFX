@@ -1,9 +1,4 @@
 @font-face {
-    font-family: 'Kalos Sans';
-    src: url("/fonts/Kalos.ttf");
-}
-
-@font-face {
     font-family: 'Open Sans Bold';
     src: url("/fonts/OpenSans-Bold.ttf");
 }
@@ -16,11 +11,6 @@
 @font-face {
     font-family: 'Anurati';
     src: url("/fonts/Anurati-Regular.otf");
-}
-
-.text-area {
-    -fx-font-family: 'FiraCode';
-    -fx-font-size: 18;
 }
 
 .custom-font {
@@ -86,6 +76,12 @@
     -fx-faint-focus-color: transparent;
     -fx-focus-color: rgba(247, 140, 123, 0.9); /* here rgba (corrected) */
 }
+/*---------------------------General-----------------------------*/
+.glyph-icon{
+    -fx-text-fill: -icons-color;
+    -fx-fill: -icons-color;
+    -glyph-size: -icon-size;
+}
 
 /*---------------------------Splash Screen-----------------------------*/
 .splash-text {
@@ -94,3 +90,63 @@
     -fx-fill: #00838F;
     -fx-text-alignment: center;
 }
+
+/*---------------------------Top Bar Buttons-----------------------------*/
+.exit-button {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -icons-color: #999999;
+    -icon-size: 20px;
+}
+
+.minimize-button {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -icons-color: #999999;
+    -icon-size: 20px;
+}
+
+.exit-button:hover {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(233, 47, 22, 0.9);
+    -icons-color: white;
+}
+
+.minimize-button:hover {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bdc3c7;
+    -icons-color: Black;
+}
+
+.top-bar-nav {
+    -fx-background-image: url("../images/top_bar_nav.jpg");
+}
+
+/*---------------------------Bottom Bar Buttons-----------------------------*/
+.bottom-bar-nav {
+    -fx-background-image: url("../images/bottom_bar_nav.jpg");
+}
+
+.option-button {
+    -fx-font-family: "Open Sans Bold";
+    -fx-font-size: 17;
+    -fx-text-fill: #00838F;
+    -icons-color: #00838F;
+    -icon-size: 17px;
+}
+
+
+/*---------------------------Main Screen-----------------------------*/
+.main-background {
+    -fx-background-image: url("../images/background.jpg");
+}
+
+.main-logo {
+    -fx-font-family: "Anurati";
+    -fx-font-size: 17;
+    -fx-fill: #00838F;
+    -fx-text-alignment: center;
+}
+
