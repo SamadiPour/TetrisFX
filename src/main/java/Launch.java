@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -24,6 +25,9 @@ public class Launch extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Platform.setImplicitExit(false);
+        stage.getIcons().add(new Image(Launch.class.getResourceAsStream("images/icon.png")));
+        stage.setTitle("TetrisFX");
+
 
         //display splash screen for 2 second with fade and blur effect
         FXMLLoader fxmlLoader = new FXMLLoader();
