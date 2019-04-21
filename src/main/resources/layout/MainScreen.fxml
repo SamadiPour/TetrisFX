@@ -29,7 +29,7 @@
                     <children>
                         <JFXButton fx:id="optionBtn" contentDisplay="RIGHT" focusTraversable="false" layoutX="1050.0" prefHeight="40.0" prefWidth="140.0" styleClass="option-button" text="OPTIONS" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <graphic>
-                                <MaterialDesignIconView glyphName="SETTINGS" />
+                                <MaterialDesignIconView fx:id="optionBtnIcon" glyphName="SETTINGS" />
                             </graphic>
                         </JFXButton>
                         <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-logo" text="TETRISFX" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" />
