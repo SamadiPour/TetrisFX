@@ -75,6 +75,11 @@ public class SplashScreenController implements Initializable {
 
         //set what should be done after fadein
         fadeIn.setOnFinished(event -> {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             splashScreen.setEffect(gaussianBlur);
             blurAnimation.playFromStart();
         });

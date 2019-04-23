@@ -82,7 +82,7 @@ public class MainScreenController implements Initializable {
         imageView.setStyle("-fx-background-color: transparent");
         dialogLayout.setBody(imageView);
         JFXDialog dialog = new JFXDialog(rootStackPane, dialogLayout, JFXDialog.DialogTransition.CENTER);
-        JFXButton ok = new JFXButton("OK");
+        JFXButton ok = new JFXButton("Thanks, I Got It");
         ok.setButtonType(JFXButton.ButtonType.RAISED);
         ok.getStyleClass().add("green-button");
         dialogLayout.setActions(ok);
